@@ -1,5 +1,6 @@
  #!/bin/bash
 
+go "running script"
 git checkout gh-pages #move to the right branch
 rm -rf $COMPONENT #remove the older instance we are forwarding to from the main index.html
 git clone https://github.com/runn-vermel/$COMPONENT  #clone the new and improved repo
