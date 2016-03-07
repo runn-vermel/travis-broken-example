@@ -4,8 +4,8 @@ php:
   - 5.4
   - hhvm
 script: phpunit Test.php
-deploy:
-  provider: script
-  script: ghpages.sh
-  on:
-    branch: master
+after_success:
+  echo $COMPONENT
+  git checkout gh-pages
+  git tag gh1.0.0
+  git push origin gh-pages --tags
