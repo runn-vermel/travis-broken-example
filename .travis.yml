@@ -1,11 +1,11 @@
 language: php
 php:
-  - 5.5
-  - 5.4
   - hhvm
 script: phpunit Test.php
 after_success:
-  echo $COMPONENT
-  git checkout gh-pages
-  git tag gh1.0.0
-  git push origin gh-pages --tags
+  if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) && 
+      [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      ./ghpages.sh
+  else
+    echo "This will not deploy!"
+  fi
