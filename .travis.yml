@@ -4,6 +4,8 @@ php:
   - 5.4
   - hhvm
 script: phpunit Test.php
-after_success:
-  chmod 755 ghpages.sh
-  ./ghpages.sh
+deploy:
+  provider: script
+  script: ghpages.sh
+  on:
+    branch: master
