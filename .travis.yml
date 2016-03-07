@@ -5,5 +5,5 @@ php:
   - hhvm
 script: phpunit Test.php
 after_success:
- - chmod 755 ghpages.sh
- - ./ghpages.sh
+  chmod 755 ghpages.sh
+  ./ghpages.sh
