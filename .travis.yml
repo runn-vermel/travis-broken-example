@@ -6,6 +6,4 @@ after_success:
   if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) && 
       [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo "this should work"
-  else
-    echo "This will not deploy!"
   fi
