@@ -2,6 +2,7 @@ language: php
 php:
   - hhvm
 script: phpunit Test.php
-#after_success:
+after_success:
+  echo "success"
 #  - if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) &&  [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo "this should work" elif echo "this won't work" fi
 
